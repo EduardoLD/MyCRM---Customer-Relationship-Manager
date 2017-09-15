@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Cadastro de visitantes</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<style>
+		body{
+		background-image: url(http://gallery.yopriceville.com/var/albums/Abstract/Aqua_Blue.jpg?m=1399676400);
+	}
+	h1{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 50pt;
+		left: 450px;
+		bottom: 30px;
+		text-shadow: black;
+		position: relative;
+	}
+	font{
+color:white;
+font-family: 'Josefin Sans', sans-serif;
+}
+	.botoes{
+		position: absolute;
+		top: 400px;
+		right: 225px;
+	}
+	.tudo{
+		position: relative;
+		left: 50px;
+		top: 80px;
+	}
+	</style>
+</head>
+
+<script>
+	function muda_img(event){
+	var selectedFile = event.target.files[0];
+		var reader = new FileReader();
+	var img = document.getElementById("user-pic");
+
+	reader.onload = function(event) {
+	img.src = event.target.result;
+	};
+	reader.readAsDataURL(selectedFile);
+	}
+</script>
+
+<body>
+<div class="tudo">
+<div class="container-fluid">	
+	<h1><font><b>Cadastro de Visitantes</b></font></h1>
+</div>
+<div class="row-container-fluid">
+	<div class="col-md-3">
+		<img class="foto" src="http://3.bp.blogspot.com/-fxCbFrTVQLw/UR-9RFpbEJI/AAAAAAAABFg/watncXQCeFQ/s1600/adduser.png" id="user-pic" height="300px" width="350px">
+		<input type="file" accept="image/*" id="arquivo" onchange="muda_img(event)" class="arquivo"><br>
+	</div>
+	<div class="col-md-9">
+		<div class="row-container-fluid">
+			<div class="col-md-4">
+				<font>Nome:</font> <input class="form-control" type="text">	
+			</div>
+			<div class="col-md-3">
+				<font>CPF:</font> <input class="form-control" type="text">
+			</div>
+			<div class="col-md-3">
+				<font>RG:</font> <input class="form-control" type="text" name="">
+			</div>
+		</div>		
+
+		<div class="row-container-fluid">
+			<div class="col-md-4">
+				<font>Endereço:</font> <input class="form-control" type="text">	
+			</div>
+			<div class="col-md-3">
+				<font>Bairro:</font> <input class="form-control" type="text">
+			</div>
+			<div class="col-md-3">
+				<font>Número:</font> <input class="form-control" type="text">
+			</div>
+		</div>
+
+		<div class="row-container-fluid">
+	  		<div class="col-md-4">
+	  			<font>Condominio:</font>
+				<select class="selectpicker form-control">
+					<option>Selecione</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
+			</div>
+
+			<div class="col-md-3">
+				<font>Bloco:</font>
+				<select class="selectpicker form-control">
+					<option>Selecione</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>	
+			</div>
+			<div class="col-md-3">
+				<font>Apartamento:</font><input class="form-control" type="text">
+			</div>	
+		</div>
+		<div class="row-container-fluid">
+			<div class="col-md-4">
+				<font>E-mail:</font> <input class="form-control" type="text">	
+			</div>
+			<div class="col-md-3">
+				<font>Celular:</font> <input class="form-control" type="text">
+			</div>
+			<div class="col-md-3">
+				<font>Tel. Fixo:</font> <input class="form-control" type="text" name="">
+			</div>
+		</div>
+	</div>	
+</div>
+	
+	<form>
+		<div class="botoes">
+		<input class="btn btn-success" type="submit" value="Cadastrar">
+		<input class="btn btn-danger" type="submit" value="Cadastrar">
+	</div>
+	</form>
+
+</div>
+</body>
+</html>
