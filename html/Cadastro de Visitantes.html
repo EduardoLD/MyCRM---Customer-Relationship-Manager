@@ -38,7 +38,10 @@ font-family: 'Josefin Sans', sans-serif;
 		left: 50px;
 		top: 80px;
 	}
+	#email:valid {background:#006600;color:#fff }
+	#email:invalid {background:#990000; color:#fff}
 	</style>
+</script>
 </head>
 
 <script>
@@ -52,6 +55,8 @@ font-family: 'Josefin Sans', sans-serif;
 	};
 	reader.readAsDataURL(selectedFile);
 	}
+
+
 </script>
 
 <body>
@@ -59,33 +64,35 @@ font-family: 'Josefin Sans', sans-serif;
 <div class="container-fluid">	
 	<h1><font><b>Cadastro de Visitantes</b></font></h1>
 </div>
+<form name="formulariovisitantes" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
 <div class="row-container-fluid">
 	<div class="col-md-3">
 		<img class="foto" src="http://3.bp.blogspot.com/-fxCbFrTVQLw/UR-9RFpbEJI/AAAAAAAABFg/watncXQCeFQ/s1600/adduser.png" id="user-pic" height="300px" width="350px">
 		<input type="file" accept="image/*" id="arquivo" onchange="muda_img(event)" class="arquivo"><br>
 	</div>
+
 	<div class="col-md-9">
 		<div class="row-container-fluid">
 			<div class="col-md-4">
-				<font>Nome:</font> <input class="form-control" type="text">	
+				<font>Nome:</font> <input class="form-control" type="text" name="nome" required=""  >	
 			</div>
 			<div class="col-md-3">
-				<font>CPF:</font> <input class="form-control" type="text">
+				<font>CPF:</font> <input class="form-control" type="text" name="cpf" required="">
 			</div>
 			<div class="col-md-3">
-				<font>RG:</font> <input class="form-control" type="text" name="">
+				<font>RG:</font> <input class="form-control" type="text" name="rg" required="">
 			</div>
 		</div>		
 
 		<div class="row-container-fluid">
 			<div class="col-md-4">
-				<font>Endereço:</font> <input class="form-control" type="text">	
+				<font>Endereço:</font> <input class="form-control" type="text" name="endereco" required="">	
 			</div>
 			<div class="col-md-3">
-				<font>Bairro:</font> <input class="form-control" type="text">
+				<font>Bairro:</font> <input class="form-control" type="text" name="bairro" required="">
 			</div>
 			<div class="col-md-3">
-				<font>Número:</font> <input class="form-control" type="text">
+				<font>Número:</font> <input class="form-control" type="text" name="numero" required="">
 			</div>
 		</div>
 
@@ -116,26 +123,24 @@ font-family: 'Josefin Sans', sans-serif;
 			</div>	
 		</div>
 		<div class="row-container-fluid">
-			<div class="col-md-4">
-				<font>E-mail:</font> <input class="form-control" type="text">	
+			<div class="col-md-4" id="email">
+				<label for="email"><font>E-mail:</font></label> <input class="form-control" type="email" placeholder="ex. nome@outlook.com" required="">	
 			</div>
 			<div class="col-md-3">
-				<font>Celular:</font> <input class="form-control" type="text">
+				<font>Celular:</font> <input class="form-control" type="text" placeholder="(xx) xxxxx-xxxx" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}">
 			</div>
 			<div class="col-md-3">
-				<font>Tel. Fixo:</font> <input class="form-control" type="text" name="">
+				<font>Tel. Fixo:</font> <input class="form-control" type="text" placeholder="(xx) xxxx-xxxx" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 			</div>
 		</div>
 	</div>	
 </div>
 	
-	<form>
 		<div class="botoes">
 		<input class="btn btn-success" type="submit" value="Cadastrar">
-		<input class="btn btn-danger" type="submit" value="Cadastrar">
+		<input class="btn btn-danger" type="submit" value="Cancelar">
 	</div>
-	</form>
-
 </div>
+</form>
 </body>
 </html>
