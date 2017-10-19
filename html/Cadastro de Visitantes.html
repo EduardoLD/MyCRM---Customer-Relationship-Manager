@@ -11,54 +11,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="theme.css">
-	<style>
-		body{
-		background-image: url(http://gallery.yopriceville.com/var/albums/Abstract/Aqua_Blue.jpg?m=1399676400);
-	}
-	h1{
-		font-family: 'Josefin Sans', sans-serif;
-		font-size: 50pt;
-		left: 450px;
-		bottom: 30px;
-		text-shadow: black;
-		position: relative;
-	}
-	font{
-color:white;
-font-family: 'Josefin Sans', sans-serif;
-}
-	.botoes{
-		position: absolute;
-		top: 400px;
-		right: 225px;
-	}
-	.tudo{
-		position: relative;
-		left: 50px;
-		top: 80px;
-	}
-	#email:valid {background:#006600;color:#fff }
-	#email:invalid {background:#990000; color:#fff}
-	</style>
-</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
 </head>
-
-<script>
-	function muda_img(event){
-	var selectedFile = event.target.files[0];
-		var reader = new FileReader();
-	var img = document.getElementById("user-pic");
-
-	reader.onload = function(event) {
-	img.src = event.target.result;
-	};
-	reader.readAsDataURL(selectedFile);
-	}
-
-
-</script>
-
+	<script language="javascript" src="funcoes.js"></script>
 <body>
 <div class="tudo">
 <div class="container-fluid">	
@@ -119,26 +75,26 @@ font-family: 'Josefin Sans', sans-serif;
 				</select>	
 			</div>
 			<div class="col-md-3">
-				<font>Apartamento:</font><input class="form-control" type="text">
+				<font>Apartamento:</font><input class="form-control" type="text" name="apart" required="">
 			</div>	
 		</div>
 		<div class="row-container-fluid">
 			<div class="col-md-4" id="email">
-				<label for="email"><font>E-mail:</font></label> <input class="form-control" type="email" placeholder="ex. nome@outlook.com" required="">	
+				<label for="email"><font>E-mail:</font></label> <input class="form-control" name="email" type="email" placeholder="ex. nome@outlook.com" required="">	
 			</div>
 			<div class="col-md-3">
-				<font>Celular:</font> <input class="form-control" type="text" placeholder="(xx) xxxxx-xxxx" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}">
+				<font>Celular:</font> <input class="form-control" type="text" name="celular" placeholder="(xx) xxxxx-xxxx">
 			</div>
 			<div class="col-md-3">
-				<font>Tel. Fixo:</font> <input class="form-control" type="text" placeholder="(xx) xxxx-xxxx" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
+				<font>tel.fixo:</font> <input class="form-control" type="text" placeholder="(xx) xxxx-xxxx">
 			</div>
 		</div>
 	</div>	
 </div>
 	
 		<div class="botoes">
-		<input class="btn btn-success" type="submit" value="Cadastrar">
-		<input class="btn btn-danger" type="submit" value="Cancelar">
+		<input class="btn btn-success" onclick="funcao1()" type="submit" value="Cadastrar">
+		<input class="btn btn-danger" onclick="funcao2()" type="submit" value="Cancelar">
 	</div>
 </div>
 </form>

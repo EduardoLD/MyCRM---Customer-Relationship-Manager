@@ -1,0 +1,27 @@
+body{
+		background-image: url(http://gallery.yopriceville.com/var/albums/Abstract/Aqua_Blue.jpg?m=1399676400);
+	}
+	h1{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 50pt;
+		left: 450px;
+		bottom: 30px;
+		text-shadow: black;
+		position: relative;
+	}
+	font{
+color:white;
+font-family: 'Josefin Sans', sans-serif;
+}
+	.botoes{
+		position: absolute;
+		top: 400px;
+		right: 225px;
+	}
+	.tudo{
+		position: relative;
+		left: 50px;
+		top: 80px;
+	}
+	#email:valid {background:#006600;color:#fff }
+	#email:invalid {background:#990000; color:#fff}
